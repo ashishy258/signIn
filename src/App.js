@@ -12,6 +12,7 @@ function App () {
   }
   //var accessToken = '';
   function requestAccessToken(){
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     let tokenEndPoint = 'https://login.salesforce.com/services/oauth2/token'+
                         '?grant_type=password'+
                         '&client_id=3MVG9n_HvETGhr3D.BDWp3YDxY6ntlC8XAmDPOkFJ4HpwTlV5CBcey.TTrnc86x4tcGDSxjJ7WKs.2009ADL1'+
@@ -19,7 +20,7 @@ function App () {
                         '&username=ashish258@test.com'+
                         '&password=alsahlijsehe@258MZPirCLpkwrFswBQJrF7wv27r';
     // POST request using fetch() 
-    fetch(tokenEndPoint, { 
+    fetch(proxyurl+tokenEndPoint, { 
           
       // Adding method type 
       method: "POST", 
