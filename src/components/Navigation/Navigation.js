@@ -1,27 +1,39 @@
 import React from 'react';
-import './Navigation.css';
 
-const Navigation = ({route, onRouteChange}) =>{
+const Navigation = ({userName, route, onRouteChange}) =>{
     return(
         <div>
           <div>
             <h1 className='tc'>FREE PHOTO GALLERY</h1>
-            {route==='Home'
-            ?<nav style={{display: 'flex', justifyContent: 'center'}} className="pa1 pa1-ns">
-                <p onClick={()=>onRouteChange('Home')} className="f3 link dim black pa3 pointer">Home</p>
-                <p onClick={()=>onRouteChange('SignIn')} className="f3 link dim black pa3 pointer">SignIn</p>
-                <p onClick={()=>onRouteChange('Register')} className="f3 link dim black pa3 pointer">Register</p>
-             </nav>
+            {userName
+            ?<nav className="db dt-l w-100 border-box pa0 ph5-l bg-black-90">
+                <div className="db dtc-l v-mid w-100 w-75-l tc tr-l">
+                  <p onClick={()=>onRouteChange('Home')} className="link dim white f3 f3-l dib mr3 mr4-l pointer">SignOut</p>
+                </div>
+              </nav>
+            :(route==='Home'
+            ?
+              <nav className="db dt-l w-100 border-box pa0 ph5-l bg-black-90">
+                <div className="db dtc-l v-mid w-100 w-75-l tc tr-l">
+                  <p onClick={()=>onRouteChange('Home')} className="link dim white f3 f3-l dib mr3 mr4-l pointer">Home</p>
+                  <p onClick={()=>onRouteChange('SignIn')} className="link dim white f3 f3-l dib mr3 mr4-l pointer">SignIn</p>
+                  <p onClick={()=>onRouteChange('Register')} className="link dim white f3 f3-l dib mr3 mr4-l pointer">Register</p>
+                </div>
+              </nav>
              :
              (route==='SignIn'
-             ?<nav style={{display: 'flex', justifyContent: 'center'}} className="pa1 pa1-ns">
-                  <p onClick={()=>onRouteChange('Home')} className="f3 link dim black pa3 pointer">Home</p>
-                  <p onClick={()=>onRouteChange('Register')} className="f3 link dim black pa3 pointer">Register</p>
+             ?<nav className="db dt-l w-100 border-box pa0 ph5-l bg-black-90">
+                <div className="db dtc-l v-mid w-100 w-75-l tc tr-l">
+                  <p onClick={()=>onRouteChange('Home')} className="link dim white f3 f3-l dib mr3 mr4-l pointer">Home</p>
+                  <p onClick={()=>onRouteChange('Register')} className="link dim white f3 f3-l dib mr3 mr4-l pointer">Register</p>
+                </div>
               </nav>
-              :<nav style={{display: 'flex', justifyContent: 'center'}} className="pa1 pa1-ns">
-                  <p onClick={()=>onRouteChange('Home')} className="f3 link dim black pa3 pointer">Home</p>
-                  <p onClick={()=>onRouteChange('SignIn')} className="f3 link dim black pa3 pointer">SignIn</p>
-               </nav>)
+              :<nav className="db dt-l w-100 border-box pa0 ph5-l bg-black-90">
+                  <div className="db dtc-l v-mid w-100 w-75-l tc tr-l">
+                    <p onClick={()=>onRouteChange('Home')} className="link dim white f3 f3-l dib mr3 mr4-l pointer">Home</p>
+                    <p onClick={()=>onRouteChange('SignIn')} className="link dim white f3 f3-l dib mr3 mr4-l pointer">SignIn</p>
+                  </div>
+                </nav>))
             }
             
           </div>   
