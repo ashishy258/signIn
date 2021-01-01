@@ -36,7 +36,6 @@ function App () {
     .then(response => response.json()) 
     .then(json => {
       setaccessToken(json.access_token);
-      console.log(json);
     });                   
   }
   useEffect(() => {

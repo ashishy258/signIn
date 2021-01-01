@@ -11,7 +11,6 @@ function Register({getUserName, accessToken}){
   function onFieldChange(event){
     if(event.target.name === 'First-Name'){
       setFirstName(event.target.value);
-      console.log(accessToken);
     }else if(event.target.name === 'Last-Name'){
       setLastName(event.target.value);
     }else if(event.target.name === 'email-address'){
@@ -24,9 +23,7 @@ function Register({getUserName, accessToken}){
   function inputUser(){
     
     const endPoint = 'https://pharma-store-dev-ed.my.salesforce.com/services/apexrest/Contact';
-    
-    console.log(endPoint);
-    console.log(accessToken);
+
     fetch(proxyurl+endPoint, {
       method: "POST",
       body: JSON.stringify({ 

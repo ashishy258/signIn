@@ -11,7 +11,6 @@ function SignIn({getUserName, accessToken}){
   function onFieldChange(event){
     if(event.target.name === 'email-address'){
       setEmail(event.target.value);
-      console.log(accessToken);
     }else{
       setPassword(event.target.value);
     }
@@ -21,8 +20,6 @@ function SignIn({getUserName, accessToken}){
     
     const endPoint = 'https://pharma-store-dev-ed.my.salesforce.com/services/apexrest/Contact/'+
                       'email='+email+'&password='+password;
-    console.log(endPoint);
-    console.log(accessToken);
     fetch(proxyurl+endPoint, {
       method: "GET",
       headers: { 
